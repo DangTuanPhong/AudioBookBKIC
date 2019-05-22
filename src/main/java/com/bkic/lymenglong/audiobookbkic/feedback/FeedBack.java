@@ -44,7 +44,6 @@ public class FeedBack extends AppCompatActivity {
                 onBackPressed();
             }
         });
-
     }
 
     private void sendEmail(){
