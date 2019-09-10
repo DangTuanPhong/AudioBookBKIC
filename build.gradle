@@ -4,7 +4,7 @@ android {
     compileSdkVersion 27
     buildToolsVersion '28.0.3'
     defaultConfig {
-        applicationId "com.bkic.lymenglong.audiobookbkic"
+        applicationId "com.bkic.tuanphong.audiobookbkic"
         minSdkVersion 15
         targetSdkVersion 27
         versionCode 1

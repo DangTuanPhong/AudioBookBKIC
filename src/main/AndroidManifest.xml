@@ -1,6 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.bkic.lymenglong.audiobookbkic">
+    package="com.bkic.tuanphong.audiobookbkic">
 
     <!--  Permission required for Downloading Files  -->
     <uses-permission android:name="android.permission.INTERNET" />
@@ -20,7 +20,7 @@
     <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
 
     <application
-        android:name=".checkInternet.MyApplication"
+        android:name="com.bkic.tuanphong.audiobookbkic.checkInternet.MyApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -28,9 +28,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <!--region Test-->
-        <service android:name=".player.MediaPlayerService" />
+        <service android:name="com.bkic.tuanphong.audiobookbkic.player.MediaPlayerService" />
         <activity
-            android:name=".checkInternet.MainActivity"
+            android:name="com.bkic.tuanphong.audiobookbkic.checkInternet.MainActivity"
             android:label="@string/hint_home_screen_test"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -40,7 +40,7 @@
             </intent-filter>
         </activity>
         <receiver
-            android:name=".checkInternet.ConnectivityReceiver"
+            android:name="com.bkic.tuanphong.audiobookbkic.checkInternet.ConnectivityReceiver"
             android:enabled="true">
             <!--<intent-filter>
                 <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
@@ -48,19 +48,19 @@
         </receiver>
 
         <activity
-            android:name=".checkInternet.SecondActivity"
+            android:name="com.bkic.tuanphong.audiobookbkic.checkInternet.SecondActivity"
             android:label="@string/title_activity_second"
-            android:parentActivityName=".checkInternet.MainActivity"
+            android:parentActivityName="com.bkic.tuanphong.audiobookbkic.checkInternet.MainActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"
             tools:targetApi="jelly_bean">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".checkInternet.MainActivity" />
+                android:value="com.bkic.tuanphong.audiobookbkic.checkInternet.MainActivity" />
         </activity>
         <!--endregion-->
         <activity
-            android:name=".splashScreen.SplashScreen"
+            android:name="com.bkic.tuanphong.audiobookbkic.splashScreen.SplashScreen"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -69,7 +69,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".account.login.ViewLoginActivity"
+            android:name="com.bkic.tuanphong.audiobookbkic.account.login.ViewLoginActivity"
             android:label="@string/hint_login"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize">
@@ -80,7 +80,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".main.MainActivity"
+            android:name="com.bkic.tuanphong.audiobookbkic.main.MainActivity"
             android:label="@string/hint_home_screen"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -90,7 +90,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".account.register.ViewRegisterActivity"
+            android:name="com.bkic.tuanphong.audiobookbkic.account.register.ViewRegisterActivity"
             android:label="@string/hint_register"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize">
@@ -101,23 +101,23 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".handleLists.history.ListHistory"
+            android:name="com.bkic.tuanphong.audiobookbkic.handleLists.history.ListHistory"
             android:windowSoftInputMode="adjustResize|stateHidden"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".handleLists.history.ListHistoryChapter"
+            android:name="com.bkic.tuanphong.audiobookbkic.handleLists.history.ListHistoryChapter"
             android:windowSoftInputMode="adjustResize|stateHidden"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".handleLists.listCategory.ListCategory"
+            android:name="com.bkic.tuanphong.audiobookbkic.handleLists.listCategory.ListCategory"
             android:windowSoftInputMode="adjustResize|stateHidden"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".handleLists.listBook.ListBook"
+            android:name="com.bkic.tuanphong.audiobookbkic.handleLists.listBook.ListBook"
             android:windowSoftInputMode="adjustResize|stateHidden"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".help.HelpActivity"
+            android:name="com.bkic.tuanphong.audiobookbkic.help.HelpActivity"
             android:label="@string/hint_help"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -128,7 +128,7 @@
         </activity>
 
         <activity
-            android:name=".account.showUserInfo.UserInfoActivity"
+            android:name="com.bkic.tuanphong.audiobookbkic.account.showUserInfo.UserInfoActivity"
             android:label="@string/hint_accountInfo"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize">
@@ -139,7 +139,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".player.PlayControl"
+            android:name="com.bkic.tuanphong.audiobookbkic.player.PlayControl"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.RUN"/>
@@ -147,17 +147,17 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".reading.ViewReading"
+            android:name="com.bkic.tuanphong.audiobookbkic.reading.ViewReading"
             android:screenOrientation="portrait">
         </activity>
         <activity
-            android:name=".handleLists.favorite.ListFavorite"
+            android:name="com.bkic.tuanphong.audiobookbkic.handleLists.favorite.ListFavorite"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".handleLists.listChapter.ListChapter"
+            android:name="com.bkic.tuanphong.audiobookbkic.handleLists.listChapter.ListChapter"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".download.MainActivityDownload"
+            android:name="com.bkic.tuanphong.audiobookbkic.download.MainActivityDownload"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.RUN" />
@@ -165,22 +165,22 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".handleLists.listOffline.ListOfflineBook"
+            android:name="com.bkic.tuanphong.audiobookbkic.handleLists.listOffline.ListOfflineBook"
             android:screenOrientation="portrait"/>
-        <activity android:name=".handleLists.listOffline.ListOfflineChapter"
+        <activity android:name="com.bkic.tuanphong.audiobookbkic.handleLists.listOffline.ListOfflineChapter"
             android:screenOrientation="portrait"/>
 
-        <activity android:name=".download.MainActivityDownloadManager">
+        <activity android:name="com.bkic.tuanphong.audiobookbkic.download.MainActivityDownloadManager">
             <intent-filter>
                 <action android:name="android.intent.action.RUN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
         <activity
-            android:name=".search.ListBookSearch"
+            android:name="com.bkic.tuanphong.audiobookbkic.search.ListBookSearch"
             android:screenOrientation="portrait"/>
         <activity
-            android:name=".feedback.FeedBack"
+            android:name="com.bkic.tuanphong.audiobookbkic.feedback.FeedBack"
             android:label="@string/hint_feedback"
             android:screenOrientation="portrait">
             <intent-filter>
@@ -191,7 +191,7 @@
         </activity>
 
         <service
-            android:name=".download.MyDownloadService"
+            android:name="com.bkic.tuanphong.audiobookbkic.download.MyDownloadService"
             android:enabled="true" />
 
     </application>
