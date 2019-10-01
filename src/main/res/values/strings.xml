@@ -69,7 +69,7 @@
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
     <string name="action_sign_in_short">Sign in</string>
-    <string name="error_invalid_email">Email không dúng</string>
+    <string name="error_invalid_email">Email không đúng</string>
     <string name="error_invalid_phone">Số điện thoại không dúng</string>
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
@@ -155,7 +155,7 @@
     <string name="text_1_star">một sao</string>
     <string name="text_2_star">hai sao</string>
     <string name="text_3_star">ba sao</string>
-    <string name="text_4_star">buốn sao</string>
+    <string name="text_4_star">bốn sao</string>
     <string name="text_5_star">năm sao</string>
     <string name="update">Cập Nhật</string>
     <string name="text_cancel">Hủy</string>
@@ -225,5 +225,6 @@
     <string name="tv_content">Nội dung</string>
     <string name="feedback_content"> Nhập nội dung ở đây </string>
     <string name="btn_send_email"> Gửi phản hồi </string>
+    <string name="error_null_content"> Phản hồi không có nội dung, không thể gửi</string>
 
 </resources>

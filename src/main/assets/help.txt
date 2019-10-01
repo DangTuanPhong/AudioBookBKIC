@@ -31,4 +31,3 @@ Khi bạn dùng hai hay nhiều ngón tay, thao tác chạm hoặc cử chỉ c�
     • Quay lại trang chủ nút : Quay lại trang chủ sách nói
     • Khi người dùng muốn xóa sách trong mục lịch sử, yêu thích hoặc sách đã tải xuống, chỉ cần ấn và giữ sách đó trong khoảng 2s, 1 thông báo sẽ hiện lên và sau khi ấn mục " xóa" sách sẽ được xóa khỏi danh sách.
     • Mỗi khi bạn mở 1 cuốn sách, để giảm tải việc quá nhiều người dùng gây nghẽn mạng, sách chỉ tải tối đa 10 chương, người dùng nên vuốt xuống cho đến cuối để biết có bao nhiêu chương, rồi sau đó mới quay lại chương cần đọc ( Nhiều người dùng bị mắc lỗi bấm vào nghe luôn từ chương 1 và cứ bấm chương tiếp theo nên chỉ nghe được đến chương 10 là kết thúc)
-    •

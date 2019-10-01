@@ -43,7 +43,6 @@ public class MainActivity extends AppCompatActivity
     DBHelper dbHelper;
     private static ArrayList<Menu> menuList;
     private ProgressBar progressBar;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
