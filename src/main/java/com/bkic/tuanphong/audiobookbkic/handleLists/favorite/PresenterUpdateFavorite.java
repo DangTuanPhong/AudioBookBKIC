@@ -197,14 +197,14 @@ public class PresenterUpdateFavorite implements PresenterUpdateFavoriteImp {
 
     //Update Favorite Or History To Server (addHistory, addFavorite)
     @Override
-    public void RequestUpdateToServer(String actionRequest, String userId, String bookId, String insertTime) {
+    public void RequestUpdateToServer(String actionRequest, String userId, String chapterId, String insertTime) {
         HashMap<String,String> ResultHash = new HashMap<>();
         String keyPost = "json";
         String valuePost =
                 "{" +
                         "\"Action\":\""+actionRequest+"\", " +
                         "\"UserId\":\""+userId+"\", " +
-                        "\"BookId\":\""+bookId+"\", " +
+                        "\"BookId\":\""+chapterId+"\", " +
                         "\"InsertTime\":\""+insertTime+"\"" +
                         "}";
         ResultHash.put(keyPost, valuePost);
@@ -213,14 +213,14 @@ public class PresenterUpdateFavorite implements PresenterUpdateFavoriteImp {
     }
     //endregion
     @Override
-    public void RequestToRemoveBookById(Context context, String userId, String bookId) {
+    public void RequestToRemoveBookById(Context context, String userId, String chapterId) {
         HashMap<String, String> ResultHash = new HashMap<>();
         String keyPost = "json";
         String valuePost =
                 "{" +
                         "\"Action\":\"removeFavourite\", " +
                         "\"UserId\":\""+userId+"\", " +
-                        "\"BookId\":\""+bookId+"\"" +
+                        "\"BookId\":\""+chapterId+"\"" +
                         "}";
         ResultHash.put(keyPost, valuePost);
 //        UpdateRecordData(playControlActivity, ResultHash, HttpURL_API);

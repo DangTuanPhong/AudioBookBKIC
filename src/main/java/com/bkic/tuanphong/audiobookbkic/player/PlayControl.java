@@ -360,10 +360,14 @@ public class PlayControl extends AppCompatActivity
             }
             Boolean isDownloadedAudio = initCheckChapterDownloadStatus();
             if(isDownloadedAudio){
-                AudioUrl =      Environment.getExternalStorageDirectory().getPath()+ "/"
-                        + Utils.downloadDirectory + "/" //download directory (AndroidBKIC)
-                        + chapterFromIntent.getBookId() + "/" //BookId directory
-                        + chapterFromIntent.getId() + ".mp3"; //File Name(ChapterId.mp3) Directory
+//                AudioUrl =      Environment.getExternalStorageDirectory().getPath()+ "/"
+//                        + Utils.downloadDirectory + "/" //download directory (AndroidBKIC)
+//                        + chapterFromIntent.getBookId() + "/" //BookId directory
+//                        + chapterFromIntent.getId() + ".mp3"; //File Name(ChapterId.mp3) Directory
+                AudioUrl = Environment.getExternalStorageDirectory() +
+                        "/" + Utils.downloadDirectory +
+                        "/" + chapterFromIntent.getBookTitle() +
+                        "/" + chapterFromIntent.getTitle() + ".mp3";
             } else{
                 String ChapterUrlFromIndex = hashMapChapter.get(String.valueOf(indexChapterMap)).getFileUrl();
                 AudioUrl = HttpURL_Audio + ChapterUrlFromIndex;
@@ -439,6 +443,7 @@ public class PlayControl extends AppCompatActivity
                 (
                         getIntent().getIntExtra("ChapterId",-1),
                         getIntent().getStringExtra("ChapterTitle"),
+                        getIntent().getStringExtra("BookTitle"),
                         getIntent().getStringExtra("ChapterUrl"),
                         getIntent().getIntExtra("ChapterLength", 0),
                         getIntent().getIntExtra("BookId",-1)
@@ -630,6 +635,7 @@ public class PlayControl extends AppCompatActivity
         // register status listener
         MyApplication.getInstance().setConnectivityListener(this);
         MyApplication.getInstance().setDownloadListener(this);
+        presenterPlayer.PlayMedia();
     }
 
     @Override
@@ -639,7 +645,7 @@ public class PlayControl extends AppCompatActivity
         unregisterReceiver(receiver);
         unregisterReceiver(downloadReceiver);
         //Pause Media
-//        presenterPlayer.PauseMedia();
+        presenterPlayer.PauseMedia();
     }
 
     @Override
@@ -782,8 +788,10 @@ public class PlayControl extends AppCompatActivity
     @Override
     protected void onStop() {
         super.onStop();
+        presenterPlayer.PauseMedia();
         UpdateHistoryData();
     }
+
 
     @NonNull
     private Boolean CheckBookSynced(String tableName){
@@ -947,6 +955,7 @@ public class PlayControl extends AppCompatActivity
         UpdateBookSyncStatus("favorite");
         Log.d(TAG, "UpdateFavoriteSuccess: "+message);
         if(!message.isEmpty())
+            message = "thành công";
         Toast.makeText(playControlActivity, message, Toast.LENGTH_SHORT).show();
     }
 

@@ -235,20 +235,25 @@ public class PresenterPlayer
             mediaPlayer.setOnBufferingUpdateListener(new OnBufferingUpdateListener() {
                 @Override
                 public void onBufferingUpdate(MediaPlayer mp, int percent) {
-                    int AudioBuffered = mediaPlayer.getDuration() * percent / 100;
-                    playControlActivity.getSeekBar().setSecondaryProgress(AudioBuffered);
-                    Log.d(TAG, "onBufferingUpdate: percent = " + percent);
-                    if(percent == 100) isBufferComplete = true;
-                    if(isBufferComplete) return;
-                    //Toast when buffered slow
-                    if(mediaPlayer.getCurrentPosition() >= AudioBuffered - 5000) { //5sec
-                        if (!mToastIsShowing) {
-                            mToast = Toast.makeText(playControlActivity, R.string.error_message_not_stable_internet,Toast.LENGTH_SHORT);
-                            mToast.show();
-                            mToastIsShowing = true;
-                        }
-                    } else mToastIsShowing = false;
+                    try {
+                        int AudioBuffered = mediaPlayer.getDuration() * percent / 100;
 
+                        playControlActivity.getSeekBar().setSecondaryProgress(AudioBuffered);
+                        Log.d(TAG, "onBufferingUpdate: percent = " + percent);
+                        if (percent == 100) isBufferComplete = true;
+                        if (isBufferComplete) return;
+                        //Toast when buffered slow
+                        if (mediaPlayer.getCurrentPosition() >= AudioBuffered - 5000) { //5sec
+                            if (!mToastIsShowing) {
+                                mToast = Toast.makeText(playControlActivity, R.string.error_message_not_stable_internet, Toast.LENGTH_SHORT);
+                                mToast.show();
+                                mToastIsShowing = true;
+                            }
+                        } else mToastIsShowing = false;
+
+                     }catch (NullPointerException e){
+
+                }
                 }
             });
 
@@ -357,7 +362,7 @@ public class PresenterPlayer
         return time;
     }
 
-    private void ResumeMediaDialog(final Context context){
+    public void ResumeMediaDialog(final Context context){
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
 //        builder.setTitle("Chọn Dạng Sách");
         String ms = playControlActivity.getResources().getString(R.string.message_last_period, DurationContentDescription(playControlActivity.getResumeTime()));
